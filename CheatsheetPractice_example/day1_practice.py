@@ -16,3 +16,14 @@ print(10**3)
 print(10/3)
 print(100 // 2)
 print(10 % 3)
+
+
+#------------Basic function---------#
+print(pow(8,2))
+print(abs(-10))
+print(abs(-10.10))
+print(pow(100,0.10))
+print(round(89.193))
+print(round(5.089,2))
+print(bin(687))
+print(hex(698))
