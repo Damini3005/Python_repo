@@ -92,22 +92,39 @@ todo = len('pronounsetion')
 print(todo)
 
 # ---Basic methods----------#
-print('  I am hungry  '.strip())
-print('on an island'.strip('d'))
-print('on an island'.strip('i'))
-print('but life is good!'.split())
-print('Help me'.replace('me','you'))
-print('Its Need me'.replace('me','you'))
-print('Need to make fire'.startswith('make'))
-print('Need to make fire'.startswith('Need'))
-print('and cook rice'.endswith("rice"))
-print('bye bye'.index("y"))
-print('bye bye'.index("b"))
-print('still there?'.upper())
-print("I AM HAPPY".lower())
-print('ok, i am done.'.capitalize())
-print('oh hi there'.find('e'))
-print('oh hi there'.find('r'))
-print('oh hi there'.find('h'))
-print('oh hi there'.count("h"))
-print('oh hi there'.count("e"))
+# print('  I am hungry  '.strip())
+# print('on an island'.strip('d'))
+# print('on an island'.strip('i'))
+# print('but life is good!'.split())
+# print('Help me'.replace('me','you'))
+# print('Its Need me'.replace('me','you'))
+# print('Need to make fire'.startswith('make'))
+# print('Need to make fire'.startswith('Need'))
+# print('and cook rice'.endswith("rice"))
+# print('bye bye'.index("y"))
+# print('bye bye'.index("b"))
+# print('still there?'.upper())
+# print("I AM HAPPY".lower())
+# print('ok, i am done.'.capitalize())
+# print('oh hi there'.find('e'))
+# print('oh hi there'.find('r'))
+# print('oh hi there'.find('h'))
+# print('oh hi there'.count("h"))
+# print('oh hi there'.count("e"))
+
+
+# ----------String Formating----------#
+print('*'*30)
+name1="damini"
+name2="sonali"
+print(f"Hello there {name1} and {name2}")
+print("Hello there %s and %s " %(name1, name2))
+
+num1=10
+num2=20
+print(f"{name1} give me %d rs and {name2} give me %d rs" %(num1,num2))
+
+wnum1=42.21
+wnum2=50.52
+print(f"1'st person weight is %f and 2'nd person weight is %f" %(wnum1, wnum2))
+
