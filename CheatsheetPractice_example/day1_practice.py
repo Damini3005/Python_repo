@@ -398,3 +398,46 @@ elif age1 < 18:
   print("you are a teenager")
 else:
   print("You are an adult")   
+
+# -----------------Loops------------------
+my_list1 = [1,2,3]
+my_tuple1 = (1,2,3)
+my_list3 = [(1,2), (3,4), (5,6)]
+my_dict1 = {'a':1, 'b':2, 'c':3}
+
+for num in my_list1:
+  print(num)
+
+for num in my_tuple1:
+  print(num)
+
+for num in my_list3:
+  print(num)
+
+for num in '123':
+  print(num)
+
+for k,v in my_dict1.items():
+  print(k)
+  print(v)
+
+# msg = ''
+# while msg != 'quite':
+#   msg = input("what should I do?")    
+
+#------------Range--------------
+print(range(10)) 
+print(range(1,10))
+print(list(range(0,10,2)))
+
+
+# ----Enumerate------
+for i, el in enumerate('helloo'):
+  print(f'{i}, {el}')
+
+# ----------------counter ----------------
+from collections import Counter 
+colors = ['red', 'blue', 'yellow', 'blue', 'red', 'blue']
+Counter = Counter(colors)
+print(Counter)
+Counter.most_common()[0]
