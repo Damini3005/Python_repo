@@ -232,3 +232,72 @@ print(matrix[2][2])
 print(matrix[1][1])
 print(matrix[1][2])
 print(matrix[0][1])
+
+# -----Looping through a matrix by rows---
+mx = [[1,2,3], [4,5,6]]
+for row in range(len(mx)):
+  for col in range(len(mx[0])):
+    print(mx[row][col])
+
+# new_mylist = []
+my_list1=[mx[row][col] for row in range(len(mx)) for col in range(len(mx[0]))]
+
+# print(new_mylist.append(my_list1))
+# List comprehensions
+# print(new_list[<action> for <item> in <iterator> if <some conditions>])
+a = [i for i in 'hello']
+print(a)
+b = [i*2 for i in [1,2,3]]
+print(b)
+c = [i for i in range(0,10) if i % 2 == 0]
+print(c)
+
+# Advanced Functions 
+list_of_char= list('Helloooo')
+print(list_of_char)
+sum_of_elements = sum([1,2,3,4,5])
+print(sum_of_elements)
+element_sum = [sum(pair) for  pair in zip([1,2,3],[4,2,5])]
+print(element_sum)
+sorted_by_second = sorted(['hi', 'you','man'], key=lambda el: el[0])
+print(sorted_by_second)
+sorted_by_key = sorted([
+  {'name': 'bina', 'age': 30},
+  {'name':'Andy','age':18},
+  {'name':'Zoey','age':55}],
+  key=lambda el:(el['name']))
+print(sorted_by_key)
+
+# Read line of a file into a list
+# with open("myfile.txt") as f:
+#     lines = [line.strip() for line in f]
+# print(lines)
+
+
+# ---------Dictionaries---------
+my_dict = {'name': 'andrei neagoie', 'age': 30, 'magic_power': False}
+print(my_dict['name'])
+print(len(my_dict))
+print(list(my_dict.values()))
+print(list(my_dict.items()))
+my_dict['Favourite_snack'] = 'Grapes'
+print(my_dict)
+print(my_dict.get('age'))
+print(my_dict.get('ages',0))
+print(my_dict.get('ages',1))
+del my_dict['name']
+print(my_dict.pop('name',None))
+my_dict.update({'cool':True})
+print(my_dict)
+print({**my_dict, **{'cool': True}})
+
+new_dict =dict([['name','Andrei'],['age',25],['magic_power',False]])
+print(new_dict)
+new_dict= dict(zip(['name','age','magic_power'],['saniya', 27,False]))
+print(new_dict)
+new_dict1 = my_dict.pop('magic_power')
+print(new_dict1)
+
+# Dictionary Comprehension
+abc ={key: value for key, value in new_dict.items() if key == 'age' or key == 'name'} 
+print(abc)
