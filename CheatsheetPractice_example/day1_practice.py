@@ -128,3 +128,60 @@ wnum1=42.21
 wnum2=50.52
 print(f"1'st person weight is %f and 2'nd person weight is %f" %(wnum1, wnum2))
 
+# ---------Palindrome check------------#
+print('*'*25)
+word = 'reviver'
+p = bool(word.find(word[::-1])+1)
+print(p)
+
+# -------------Boolean------------#
+print(bool(True))
+print(bool(False))
+
+print(bool(None))
+print(bool(False))
+print(bool(0))
+print(bool(0.0))
+print(bool([]))
+print(bool([0]))
+print(bool([1]))
+print(bool({}))
+print(bool({0}))
+print(bool({1}))
+print(bool(()))
+print(bool((0)))
+print(bool((1)))
+print(bool(''))
+print(bool('1'))
+print(bool('0'))
+print(bool(range(0)))
+print(bool(range(1)))
+print(bool(set()))
+# print(bool(set(0)))
+print(bool(set()))
+
+
+# -----------------Lists---------------#
+my_list = [1,2,'3', True]
+print(len(my_list))
+print(my_list.index('3'))
+print(my_list.index(True))
+print(my_list.count(2)) # 1 --> count how many times 2 appears
+print(my_list.count('3'))
+print(my_list[3])
+print(my_list[1:])
+print(my_list[:1])
+print(my_list[-1])
+print(my_list[::1])
+print(my_list[0:3:1]) # : is called slicing and has the format [ start : end : step ]
+
+# Add to list
+print(my_list*2)
+print(my_list + ['name'])
+print(my_list + [100])  # [1, 2, '3', True, 100] --> doesn't mutate original list, creates new one
+print(my_list.append(100)) # None --> Mutates original list to [1, 2, '3', True,100] # Or: <list> += [<el>]
+
+print(my_list.extend([100,200]))  # None --> Mutates original list to [1, 2, '3', True,100, 200]
+
+print(my_list.insert(2,'!!!')) # None --> [1, 2, '!!!', '3', True] - Inserts item at index and moves the rest to the right.
+print(' '.join(['Hello','there']))
