@@ -301,3 +301,30 @@ print(new_dict1)
 # Dictionary Comprehension
 abc ={key: value for key, value in new_dict.items() if key == 'age' or key == 'name'} 
 print(abc)
+
+# ---------Tuple------------
+my_tuple = ('apple', 'grapes','mango', 'grapes')
+print(my_tuple)
+apple, grapes, mango, grapes = my_tuple
+print(my_tuple)
+print(len(my_tuple))
+print(my_tuple[2])
+print(my_tuple[-1])
+print(my_tuple[0])
+print(my_tuple[3])
+
+# Immutability
+# my_tuple[1] = 'donuts'
+# my_tuple.append('candy')
+
+# methods
+print(my_tuple.index('grapes'))
+print(my_tuple.count('grapes'))
+
+# zip
+print(list(zip([1,2,3], [4,5,6])))
+
+# unzip
+z = [(1,2), (3,4), (7,8)]
+unzip = lambda z: list(zip(*z))
+print(unzip(z))
