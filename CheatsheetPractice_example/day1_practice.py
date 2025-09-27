@@ -328,3 +328,73 @@ print(list(zip([1,2,3], [4,5,6])))
 z = [(1,2), (3,4), (7,8)]
 unzip = lambda z: list(zip(*z))
 print(unzip(z))
+
+# --------------Sets------------------
+my_set = set()
+print(my_set)
+my_set.add(1)
+print(my_set)
+my_set.add(100)
+print(my_set)
+my_set.add(100) #no duplicates
+print(my_set) 
+
+newe_list = [1,2,3,3,3,4,4,5,5,6,1,7]
+print(set(newe_list))
+new_set = set(newe_list)
+print(new_set)
+new_set.discard(100)
+print(new_set)
+# new_set.remove(100)
+# print(new_set)
+# new_set.clear()
+# print(new_set)
+
+set1 = {1,2,3}
+set2 = {6,4,5}
+set3 = set1.union(set2)
+print(set1)
+print(set2)
+print(set3)
+set4 = set1.intersection(set2)
+print(set4)
+set5 = set1.difference(set2)
+print(set5)
+set6 = set1.symmetric_difference(set2)
+print(set6)
+print(set1.issubset(set2))
+
+print(set1.issuperset(set2))
+
+print(set1.isdisjoint(set2))
+
+# Frozenset
+# <frozenset> = frozenset(<collection>)
+
+
+# -----NONE----------
+# None is used for absence of a value and can be used to show nothing has been assigned to an object.
+type(None)
+a = None
+# == # equal values
+# != # not equal
+# > # left operand is greater than right operand
+# < # left operand is less than right operand
+# >= # left operand is greater than or equal to right operand
+# <= # left operand is less than or equal to right operand
+# <element> is <element> # check if two operands refer to same object in memory
+
+# -------------Logical operator------------------
+print(1 < 2 and 4> 1)
+print(1 > 4 or 4 > 1)
+print(1 is 1)
+print(1 is not 5)
+
+
+age1 = 20
+if age1 < 13:
+  print("you are a child")
+elif age1 < 18:
+  print("you are a teenager")
+else:
+  print("You are an adult")   
