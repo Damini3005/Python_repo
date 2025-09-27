@@ -205,4 +205,30 @@ del my_list2 [0]
 
 
 # Ordering
-print([1,2,5,7].sort())
+print([1,2,5,7].sort())   # None --> Mutates list to [1, 2, 3, 5]
+print([1,2,3,4].sort(reverse=True))  # None --> Mutates list to [5, 3, 2, 1]
+print([1,2,3,4].reverse())  # None --> Mutates list to [3, 5, 2, 1]
+print(sorted([1,2,5,3,8,2,4,6]))
+print(list(reversed([1,2,3,5,4,7])))
+
+# useful operations
+print(1 in [1,2,5,3])
+print(min([0.5,1,2,3,4,5]))
+print(max([1,2,3,4,5,10]))
+print(sum([2,4,5,7]))
+
+# Get first and last element of a list
+mlist = [63,21,30,45,82,77,98,10]
+print(mlist)
+first, *x, last = mlist
+print(first)
+print(last)
+
+# ---------Matrix----------
+matrix = [[1,2,3], [4,5,6], [7,8,9]]
+print(matrix[2][0])
+print(matrix[1][0])
+print(matrix[2][2])
+print(matrix[1][1])
+print(matrix[1][2])
+print(matrix[0][1])
