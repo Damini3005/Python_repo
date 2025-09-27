@@ -185,3 +185,24 @@ print(my_list.extend([100,200]))  # None --> Mutates original list to [1, 2, '3'
 
 print(my_list.insert(2,'!!!')) # None --> [1, 2, '!!!', '3', True] - Inserts item at index and moves the rest to the right.
 print(' '.join(['Hello','there']))
+
+# copy a lists
+basket = ['apple','pears','oranges']
+print(basket)
+new_basket = basket.copy()
+print(new_basket)
+new_basket2 = basket[:]
+print(new_basket2)
+
+# Remove from list
+print([1,2,3].pop()) # 3 --> mutates original list, default index in the pop method is -1 (the last item)
+
+print([1,2,3].pop(0))
+print([1,2,3].remove(2))  #None --> [1,3] Removes first occurrence of item or raises valueError
+print([1,2,3].clear())
+my_list2=[2,3,5,8]
+del my_list2 [0] 
+
+
+# Ordering
+print([1,2,5,7].sort())
