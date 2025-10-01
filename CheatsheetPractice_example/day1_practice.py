@@ -446,68 +446,89 @@ Counter.most_common()[0]
 # Tuple is an immutable and hashable list.
 #  Named tuple is its subclass with named elements.
 
-from collections import namedtuple
-point = namedtuple('point','x y')
-p= point(1,y=2)
-print(p)
-print(p[0])
-print(p.x)
-print(getattr(p,'y'))
-print(p._fields)
+# from collections import namedtuple
+# point = namedtuple('point','x y')
+# p= point(1,y=2)
+# print(p)
+# print(p[0])
+# print(p.x)
+# print(getattr(p,'y'))
+# print(p._fields)
 
-person = namedtuple('person','name height')
-print(person)
-person = person('Jean-Luc', 187)
-print(person)
-print(f'{person.height}')
-print('{p.height}'.format(p=person))
-
-
-# -----------------OrderdidDict--------------------
-from collections import OrderedDict
-programmers = OrderedDict()
-programmers['Tim'] = ['python','javascript']
-programmers['Sarah'] = ['C++']
-programmers['Bia'] = ['Ruby','Python','Go']
-
-for name, langs in programmers.items():
-  print(name + '-->')
-  for lang in langs:
-    print('\t' + lang)
+# person = namedtuple('person','name height')
+# print(person)
+# person = person('Jean-Luc', 187)
+# print(person)
+# print(f'{person.height}')
+# print('{p.height}'.format(p=person))
 
 
-# --------------Functions------------
-def some_func(a,b,x,y,z):
-    return a+ b + x + y + z
+# # -----------------OrderdidDict--------------------
+# from collections import OrderedDict
+# programmers = OrderedDict()
+# programmers['Tim'] = ['python','javascript']
+# programmers['Sarah'] = ['C++']
+# programmers['Bia'] = ['Ruby','Python','Go']
 
-args = (1, 2)
-kwargs = {'x': 3, 'y': 4, 'z': 5}
-result = some_func(*args, **kwargs)
-print(result) 
-
-def add(*a):
-  return sum(a)
-
-print(add(1,2,3))
+# for name, langs in programmers.items():
+#   print(name + '-->')
+#   for lang in langs:
+#     print('\t' + lang)
 
 
-# def f(*args):
+# # --------------Functions------------
+# def some_func(a,b,x,y,z):
+#     return a+ b + x + y + z
+
+# args = (1, 2)
+# kwargs = {'x': 3, 'y': 4, 'z': 5}
+# result = some_func(*args, **kwargs)
+# print(result) 
+
+# def add(*a):
+#   return sum(a)
+
+# print(add(1,2,3))
+
+
+# # def f(*args):
+# #    return sum(args)
+
+# # f(1,2,3,4)
 
 # def f(x,*args):
+#   print(x)
+#   print(args)
+# f(1,2,3,4) 
 
-# def f(*args,z):
+# # def my_ap(*args,z):
+# #   print(args)
+# # print(my_ap(1))  
 
-# # def f(x,*args,z):
+# def f(x,*args,z):
+#  print(args)
+ 
+# f(1,5,z=5)  
 
-# # def f(**kwargs):
+# def f(**k):
+#   print(k)
+# f(a=1,b=1,c=2)  
 
-# # def f(x, **kwargs):
+# def f(x, **kwargs):
+#   print(kwargs)
+# f(x=1,b=2,c=4)  
 
-# # def f(*args,**kwargs):
+# def f(*args,**kwargs):
+#   print(args,kwargs)
+# f(1,2,c=2,d=3)  
 
-# # def f(x,*args,**kwargs):
+# def f(x,*args,**kwargs):
+#   print(args,kwargs)
+# f(1,2,3,c=3,z=4,d=6)  
 
-# # def f(*args, y, **kwargs):    
+# def f(*args, y, **kwargs): 
+#   print(args,kwargs)
+# f(2,3,y=2,d=1)     
 
 
 # # ---------------Lambda--------------------
@@ -539,7 +560,42 @@ print(add(1,2,3))
 
 # print(output)
 
-def my_fun(*args):
-  print(args)
+# def my_fun(*args):
+#   print(args)
 
-my_fun()  
+# my_fun()  
+def f(*args):
+  t = 0
+  for i in args:
+    t += i
+
+  return t
+print(f(1,2,3,4))
+
+def f(**kwargs):
+  t= 0
+  for k ,v in kwargs.items():
+    t +=v
+  return t 
+  
+print(f(a=1,b=2,c=5)) 
+
+# ------------------------Ternery condition-----------------------------------#
+# <expression_if_true> if <condition> else <expression_if_false>
+[a if a else 'zero' for a in [0,1,0,3]]
+
+x = 20
+result = "Even" if x % 2 == 0 else "odd"
+print(result)
+
+a,b = 15,20
+max = a if a > b else b
+print(max)
+
+# ----------Map filter reduce----------
+from functools import reduce
+print(list(map(lambda x: x+1, range(10))))
+print(list(filter(lambda x : x>5, range(10))))
+# list(reduce(lambda acc, x: acc + x, range(10)))
+result =reduce(lambda acc, x: acc + x, range(10))
+print(result)
