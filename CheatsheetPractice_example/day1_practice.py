@@ -653,3 +653,33 @@ square = power_func(2)
 cube = power_func(3)
 print(square(19))
 print(cube(5))
+
+# ------------SCOPE-----------
+#if varible is being assigned to anywhere in the scope , it is regarded as local variable unless it is declared as a global and nonlocal
+
+def get_counter():
+  i = 0
+  def out():
+    nonlocal i
+    i += 1
+    return i
+  return out
+
+counter = get_counter()
+print(counter())
+print(counter())
+print(counter())
+
+
+def get_counter_less():
+  i = 10
+  def less():
+    nonlocal i
+    i -= 1
+    return i
+  return less
+
+counter1 = get_counter_less()
+print(counter1())
+print(counter1())
+print(counter1())
