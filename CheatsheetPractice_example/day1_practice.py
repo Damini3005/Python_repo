@@ -441,3 +441,105 @@ colors = ['red', 'blue', 'yellow', 'blue', 'red', 'blue']
 Counter = Counter(colors)
 print(Counter)
 Counter.most_common()[0]
+
+# -------------Named Tuple-------------------
+# Tuple is an immutable and hashable list.
+#  Named tuple is its subclass with named elements.
+
+from collections import namedtuple
+point = namedtuple('point','x y')
+p= point(1,y=2)
+print(p)
+print(p[0])
+print(p.x)
+print(getattr(p,'y'))
+print(p._fields)
+
+person = namedtuple('person','name height')
+print(person)
+person = person('Jean-Luc', 187)
+print(person)
+print(f'{person.height}')
+print('{p.height}'.format(p=person))
+
+
+# -----------------OrderdidDict--------------------
+from collections import OrderedDict
+programmers = OrderedDict()
+programmers['Tim'] = ['python','javascript']
+programmers['Sarah'] = ['C++']
+programmers['Bia'] = ['Ruby','Python','Go']
+
+for name, langs in programmers.items():
+  print(name + '-->')
+  for lang in langs:
+    print('\t' + lang)
+
+
+# --------------Functions------------
+def some_func(a,b,x,y,z):
+    return a+ b + x + y + z
+
+args = (1, 2)
+kwargs = {'x': 3, 'y': 4, 'z': 5}
+result = some_func(*args, **kwargs)
+print(result) 
+
+def add(*a):
+  return sum(a)
+
+print(add(1,2,3))
+
+
+# def f(*args):
+
+# def f(x,*args):
+
+# def f(*args,z):
+
+# # def f(x,*args,z):
+
+# # def f(**kwargs):
+
+# # def f(x, **kwargs):
+
+# # def f(*args,**kwargs):
+
+# # def f(x,*args,**kwargs):
+
+# # def f(*args, y, **kwargs):    
+
+
+# # ---------------Lambda--------------------
+# from functools import reduce
+
+# n=3
+# fib = lambda n : n if n <= 1 else fib(n-1) + fib(n-2)
+# result = fib(10)
+# print(result)
+
+# # --------------Comprehensions--------------
+# list = [i+1 for i in range(10)]
+# print(list)
+
+# set ={i for i in range(10) if i > 5}
+# print(set)
+
+# # iter = (i+5 for i in range(10))
+# # print(iter)
+
+# # dict = {i: i*2 for i in range(10)}
+# # print(dict)
+
+# output = [i+j for i in range(3) for j in range(3)]
+# output = []
+# for i in range(3):
+#   for j in range(3):
+#     output.append(i+j)
+
+# print(output)
+
+def my_fun(*args):
+  print(args)
+
+my_fun()  
