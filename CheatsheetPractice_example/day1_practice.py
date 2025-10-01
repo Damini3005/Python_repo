@@ -720,3 +720,66 @@ print(next(Counter))
 print(next(Counter))    
 print(next(Counter))    
 print(next(Counter))    
+
+#------------------- Decorators----------------
+def my_decorators(func):
+  def wrapper(*args,**kwargs):
+    print("function is about to run...")
+    result = func(*args, **kwargs)
+    print("function has finished")
+    return result
+  return wrapper
+@my_decorators
+def add(a,b):
+   return a + b
+print(add(5,10))
+
+
+# -----------Debugger Example----------------
+from functools import wraps
+def debug(func):
+  @wraps(func)
+  def out(*args,**k):
+    print(func.__name__)
+    return func(*args,**k)
+  return out
+@debug
+def add(x,y):
+  return x+y
+
+print(add(10,20))
+
+
+# -----------Class------------
+class Name:
+    age = 80
+
+    def __init__(self, a):
+        self.a = a
+
+    @classmethod
+    def get_class_name(cls):
+        return cls.__name__
+
+obj1 = Name('damini')
+print(obj1.get_class_name())  
+
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+class Employee(Person):
+    def __init__(self, name, age, staff_num):
+        super().__init__(name, age)
+        self.staff_num = staff_num
+
+
+
+person1 = Person("Damini", 25)
+person2 = Employee("Riya", 30, "E123")
+
+print(person1)  
+print(person2)
+
+ 
