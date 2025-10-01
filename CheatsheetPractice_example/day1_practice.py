@@ -776,10 +776,16 @@ class Employee(Person):
 
 
 
-person1 = Person("Damini", 25)
-person2 = Employee("Riya", 30, "E123")
+# person1 = Person("Damini", 25)
+# person2 = Employee("Riya", 30, "E123")
 
-print(person1)  
-print(person2)
+# print(person1)  
+# print(person2)
+
+# ----------------Multiple inhiritance-------------------
+class A: pass
+class B: pass
+class C(A,B):pass
+print(C.mro())
 
  
