@@ -564,122 +564,159 @@ Counter.most_common()[0]
 #   print(args)
 
 # my_fun()  
-def f(*args):
-  t = 0
-  for i in args:
-    t += i
+# def f(*args):
+#   t = 0
+#   for i in args:
+#     t += i
 
-  return t
-print(f(1,2,3,4))
+#   return t
+# print(f(1,2,3,4))
 
-def f(**kwargs):
-  t= 0
-  for k ,v in kwargs.items():
-    t +=v
-  return t 
+# def f(**kwargs):
+#   t= 0
+#   for k ,v in kwargs.items():
+#     t +=v
+#   return t 
   
-print(f(a=1,b=2,c=5)) 
+# print(f(a=1,b=2,c=5)) 
 
-# ------------------------Ternery condition-----------------------------------#
-# <expression_if_true> if <condition> else <expression_if_false>
-[a if a else 'zero' for a in [0,1,0,3]]
+# # ------------------------Ternery condition-----------------------------------#
+# # <expression_if_true> if <condition> else <expression_if_false>
+# [a if a else 'zero' for a in [0,1,0,3]]
 
-x = 20
-result = "Even" if x % 2 == 0 else "odd"
-print(result)
+# x = 20
+# result = "Even" if x % 2 == 0 else "odd"
+# print(result)
 
-a,b = 15,20
-max = a if a > b else b
-print(max)
-
-
-# ----------Map filter reduce----------
-from functools import reduce
-print(list(map(lambda x: x+1, range(10))))
-print(list(filter(lambda x : x>5, range(10))))
-# list(reduce(lambda acc, x: acc + x, range(10)))
-result =reduce(lambda acc, x: acc + x, range(10))
-print(result)
-
-# -----------Any All------------#
-print(any([False,True,False])) #return true if at least one element in the iterable is truthy
-print(any([0,0,0])) #return false if iterable is empty or all are falsy
-print(any([]))       #false because its empty
-print(any([0,"",None,10])) # return true 5 is truthy
-
-print(all([True, 1, 3, True])) #all are truthy
-print(all([True,0,1,True]))    #0 is false so it return false
-print(all([1,'hello',[1,2]]))   #true all are truthy
-print(all([]))                   #true
+# a,b = 15,20
+# max = a if a > b else b
+# print(max)
 
 
-# -----examples----
-marks =[10,20,0,45,38]
-print(any(m > 35 for m in marks))
+# # ----------Map filter reduce----------
+# from functools import reduce
+# print(list(map(lambda x: x+1, range(10))))
+# print(list(filter(lambda x : x>5, range(10))))
+# # list(reduce(lambda acc, x: acc + x, range(10)))
+# result =reduce(lambda acc, x: acc + x, range(10))
+# print(result)
 
-marks1 = [45,70,89]
-print(all(m > 40 for m in marks1))
+# # -----------Any All------------#
+# print(any([False,True,False])) #return true if at least one element in the iterable is truthy
+# print(any([0,0,0])) #return false if iterable is empty or all are falsy
+# print(any([]))       #false because its empty
+# print(any([0,"",None,10])) # return true 5 is truthy
+
+# print(all([True, 1, 3, True])) #all are truthy
+# print(all([True,0,1,True]))    #0 is false so it return false
+# print(all([1,'hello',[1,2]]))   #true all are truthy
+# print(all([]))                   #true
 
 
-# ---------------Closures---------------
-# A nested function references a value of its enclosing function and then the enclosing function returns the nested function
-# 1
-def get_multiplier(a):
-  def out(b):
-    return a * b
-  return out
+# # -----examples----
+# marks =[10,20,0,45,38]
+# print(any(m > 35 for m in marks))
 
-multiply_by_3 = get_multiplier(15.5)
-print(multiply_by_3(10))
+# marks1 = [45,70,89]
+# print(all(m > 40 for m in marks1))
 
-# 2
-def outer_fun(msg):
-  def inner_fun():
-    print(f"message: {msg}")
-  return inner_fun
 
-hi_msg=outer_fun("Hello")
-bye_msg=outer_fun("goodbye")  
-hi_msg()
-bye_msg()
+# # ---------------Closures---------------
+# # A nested function references a value of its enclosing function and then the enclosing function returns the nested function
+# # 1
+# def get_multiplier(a):
+#   def out(b):
+#     return a * b
+#   return out
 
-# 3
-def power_func(exp):
-  def power(base):
-    return base ** exp
-  return power
+# multiply_by_3 = get_multiplier(15.5)
+# print(multiply_by_3(10))
 
-square = power_func(2)
-cube = power_func(3)
-print(square(19))
-print(cube(5))
+# # 2
+# def outer_fun(msg):
+#   def inner_fun():
+#     print(f"message: {msg}")
+#   return inner_fun
+
+# hi_msg=outer_fun("Hello")
+# bye_msg=outer_fun("goodbye")  
+# hi_msg()
+# bye_msg()
+
+# # 3
+# def power_func(exp):
+#   def power(base):
+#     return base ** exp
+#   return power
+
+# square = power_func(2)
+# cube = power_func(3)
+# print(square(19))
+# print(cube(5))
 
 # ------------SCOPE-----------
 #if varible is being assigned to anywhere in the scope , it is regarded as local variable unless it is declared as a global and nonlocal
 
-def get_counter():
-  i = 0
-  def out():
-    nonlocal i
-    i += 1
-    return i
-  return out
+# def get_counter():
+#   i = 0
+#   def out():
+#     nonlocal i
+#     i += 1
+#     return i
+#   return out
 
-counter = get_counter()
-print(counter())
-print(counter())
-print(counter())
+# counter = get_counter()
+# print(counter())
+# print(counter())
+# print(counter())
 
 
-def get_counter_less():
-  i = 10
-  def less():
-    nonlocal i
-    i -= 1
-    return i
-  return less
+# def get_counter_less():
+#   i = 10
+#   def less():
+#     nonlocal i
+#     i -= 1
+#     return i
+#   return less
 
-counter1 = get_counter_less()
-print(counter1())
-print(counter1())
-print(counter1())
+# counter1 = get_counter_less()
+# print(counter1())
+# print(counter1())
+# print(counter1())
+
+
+# -----------------Modules---------------
+# import <module_name>
+# if __name__ == '__main__':
+#   main()
+
+# ---------------iterators-------------
+# <iter> = iter(<collection>)
+
+nums = [10,20,30]
+it = iter(nums)
+print(next(it))
+print(next(it))
+print(next(it))
+
+# <iter> = iter{<function>, to_exclusive}
+import random
+
+rand_iter = iter(lambda: random.randint(1,10),5)
+for val in rand_iter:
+  print(val)
+
+print(next(it,"done"))
+
+
+# ---------------Generator-------------
+def count(start, step):
+  while True:
+    yield start
+    start += step
+Counter = count(10,5)
+print(next(Counter))    
+print(next(Counter))    
+print(next(Counter))    
+print(next(Counter))    
+print(next(Counter))    
