@@ -592,6 +592,7 @@ a,b = 15,20
 max = a if a > b else b
 print(max)
 
+
 # ----------Map filter reduce----------
 from functools import reduce
 print(list(map(lambda x: x+1, range(10))))
