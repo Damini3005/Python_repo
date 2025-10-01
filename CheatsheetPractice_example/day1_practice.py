@@ -619,3 +619,37 @@ print(any(m > 35 for m in marks))
 
 marks1 = [45,70,89]
 print(all(m > 40 for m in marks1))
+
+
+# ---------------Closures---------------
+# A nested function references a value of its enclosing function and then the enclosing function returns the nested function
+# 1
+def get_multiplier(a):
+  def out(b):
+    return a * b
+  return out
+
+multiply_by_3 = get_multiplier(15.5)
+print(multiply_by_3(10))
+
+# 2
+def outer_fun(msg):
+  def inner_fun():
+    print(f"message: {msg}")
+  return inner_fun
+
+hi_msg=outer_fun("Hello")
+bye_msg=outer_fun("goodbye")  
+hi_msg()
+bye_msg()
+
+# 3
+def power_func(exp):
+  def power(base):
+    return base ** exp
+  return power
+
+square = power_func(2)
+cube = power_func(3)
+print(square(19))
+print(cube(5))
