@@ -788,4 +788,27 @@ class B: pass
 class C(A,B):pass
 print(C.mro())
 
- 
+# --------------------Exception------------------
+try:
+   10/0
+except ZeroDivisionError:
+   print("No division by zero!")
+
+while True:
+   try:
+      x = int(input('enter your age: '))
+   except ValueError:
+      print('Oops! That was no valid number. try again.....')
+   else:
+      print('Carry on!')
+      break
+# raise ValueError('some error message')
+
+
+# ----------------Finally-------------------
+try:
+   raise KeyboardInterrupt
+except:
+   print('oops')
+finally:
+   print("All done!")   
