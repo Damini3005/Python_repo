@@ -600,3 +600,22 @@ print(list(filter(lambda x : x>5, range(10))))
 # list(reduce(lambda acc, x: acc + x, range(10)))
 result =reduce(lambda acc, x: acc + x, range(10))
 print(result)
+
+# -----------Any All------------#
+print(any([False,True,False])) #return true if at least one element in the iterable is truthy
+print(any([0,0,0])) #return false if iterable is empty or all are falsy
+print(any([]))       #false because its empty
+print(any([0,"",None,10])) # return true 5 is truthy
+
+print(all([True, 1, 3, True])) #all are truthy
+print(all([True,0,1,True]))    #0 is false so it return false
+print(all([1,'hello',[1,2]]))   #true all are truthy
+print(all([]))                   #true
+
+
+# -----examples----
+marks =[10,20,0,45,38]
+print(any(m > 35 for m in marks))
+
+marks1 = [45,70,89]
+print(all(m > 40 for m in marks1))
