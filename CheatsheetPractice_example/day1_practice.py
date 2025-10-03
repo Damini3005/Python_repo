@@ -814,3 +814,30 @@
 # #    print("All done!")   
 
 
+# ----------------file io------------
+
+# read text from file
+# def read_file(filename):
+#   with open(filename,encoding='utf-8') as file:
+#      return file.readlines()
+# for line in read_file():
+#    print(line, end='') 
+# lines =read_file('my_text.txt')
+# print(lines)
+
+def write_to_file(filename,text):
+   with open(filename, 'w', encoding='utf-8') as file:
+      file.write(text)
+   return text
+lines=write_to_file('my_text.txt','Hello, this is a test!')  
+print(lines)   
+
+
+# --Append text to file 
+def append_to_file(filename,text):
+   with open(filename, 'a', encoding='utf-8') as file:
+      file.write(text)
+   return text 
+
+app_lines =append_to_file('my_text.txt','\nThis is an appended line!')
+print(app_lines)  
