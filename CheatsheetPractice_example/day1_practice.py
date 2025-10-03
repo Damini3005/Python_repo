@@ -825,19 +825,42 @@
 # lines =read_file('my_text.txt')
 # print(lines)
 
-def write_to_file(filename,text):
-   with open(filename, 'w', encoding='utf-8') as file:
-      file.write(text)
-   return text
-lines=write_to_file('my_text.txt','Hello, this is a test!')  
-print(lines)   
+# def write_to_file(filename,text):
+#    with open(filename, 'w', encoding='utf-8') as file:
+#       file.write(text)
+#    return text
+# lines=write_to_file('my_text.txt','Hello, this is a test!')  
+# print(lines)   
 
 
 # --Append text to file 
-def append_to_file(filename,text):
-   with open(filename, 'a', encoding='utf-8') as file:
-      file.write(text)
-   return text 
+# def append_to_file(filename,text):
+#    with open(filename, 'a', encoding='utf-8') as file:
+#       file.write(text)
+#    return text 
 
-app_lines =append_to_file('my_text.txt','\nThis is an appended line!')
-print(app_lines)  
+# app_lines =append_to_file('my_text.txt','\nThis is an appended line!')
+# print(app_lines)  
+
+
+# -----Useful libraries-----------
+import csv
+# def read_csv_file(filename):
+#    with open(filename, encoding='utf-8') as file:
+#       return csv.reader(file, delimiter=';')
+# rows = read_csv_file('data.csv')
+# for row in rows:
+#    print(row)   
+
+
+def write_to_csv_file(filename,rows):
+   with open(filename, 'w', encoding='utf-8') as file:
+      writer = csv.writer(file, delimiter=';')
+      writer.writerows(rows)
+data = [
+    ["Name", "Age", "City"],
+    ["Akshay", 25, "Pune"],
+    ["Damini", 24, "Mumbai"]
+]
+
+write_to_csv_file("people.csv", data)
